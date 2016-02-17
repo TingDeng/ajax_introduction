@@ -1,11 +1,13 @@
+var weatherData = {};//have to be outside of function
 $(document).ready(function(){
-  var baseUrl = 'https://api.forecast.io/';
-
+  var baseUrl = 'https://api.forecast.io/forecast/';//make sure this address conrrect for 404 because some websites change their api url
+  //var weatherData= null;
   $('#get-weather').on('click', getWeather);
 
 
 
   function buildUrl(lat, lon){
+    //return "https://api.forecast.io/forecast/19874b9bcff8e37547fb8550e260db96/37.8267,-122.423";
     return baseUrl + apiKey+'/'+lat+','+lon;
   }
 
@@ -24,6 +26,7 @@ $(document).ready(function(){
 
 
   function successHandler(data){
+    weatherData = data;
     $('#output').text(JSON.stringify(data));
     console.log(data);
   }
