@@ -2,6 +2,7 @@ var weatherData = {};//have to be outside of function
 $(document).ready(function(){
   var baseUrl = 'https://api.forecast.io/forecast/';//make sure this address conrrect for 404 because some websites change their api url
   //var weatherData= null;
+  var name ="Your Name";
   $('#get-weather').on('click', getWeather);
 
 
