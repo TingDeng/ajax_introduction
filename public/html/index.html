@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-1.12.0.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.js"></script>
 </head>
 <body>
   <div class="container">
@@ -19,7 +20,7 @@
         <input type="text" class="form-control" id="longitude" name="longtiude">
       </div>
       <button class="btn btn-default" id='get-weather'>Get Weather</button>
-      <button class="btn btn-warning" id='test'>Test The Template!</button>
+      <!--<button class="btn btn-warning" id='test'>Test The Template!</button>-->
     </div>
     <hr>
     <div class="row">
@@ -27,7 +28,7 @@
 
       </pre>
     </div>
-    <div class="row" id="test-output"></div>
+    <div id="test-output"></div>
 </div>
   <script id="entry-template" type="text/x-handlebars-template">
     <div class="entry">
@@ -69,6 +70,25 @@
   </div>
 </div>
 </div>
+</div>
+</script>
+<script id="info" type="text/x-handlebars-template">
+<div class="row">
+  <h3>Position:({{latitude}},{{longitude}})</h3>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-2">
+    <img src="images/{{icon}}.jpg" alt='{{icon}}' class='img-responsive'>
+ </div>
+<div class="row">
+  <div class="col-md-3 col-md-offset-4">
+    <h5>{{time}}</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <p><em>{{ summary }}</em></p>
+  </div>
 </div>
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
